@@ -1,0 +1,14 @@
+{
+  "name": "sweet",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dereksamuel/Sweet.git"
+  },
+  "author": "Derek Paúl",
+  "devDependencies": {
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "license": "MIT"
+}
