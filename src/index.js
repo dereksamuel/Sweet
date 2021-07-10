@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./App.jsx";
 
 ReactDOM.render(
-  <p>Hello Derek and 🌀 🌌 <strong>perro</strong>
-  Lorem ipsumDerek is a cool guy</p>,
+  <App />,
   document.getElementById("app")
 );
