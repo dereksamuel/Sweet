@@ -6,7 +6,7 @@ export default function ItemClasspets({
   path,
 }) {
   return (
-    <Anchor href={path}>
+    <Anchor to={path || "/"}>
       <Image src={cover} alt={path} />
     </Anchor>
   );

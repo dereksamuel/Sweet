@@ -6,6 +6,7 @@ module.exports = {
   mode: "development",
   output: {
     filename: "app.bundle.js",
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -20,6 +21,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
+            cacheDirectory: true,
+            plugins: [
+              "@babel/plugin-transform-runtime",
+            ],
             presets: [
               "@babel/preset-env",
               "@babel/preset-react",
@@ -33,5 +38,6 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 3000,
+    historyApiFallback: true,
   },
 };

@@ -1,12 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Anchor = styled.a`
+export const Anchor = styled(Link)`
   text-decoration: none;
   cursor: pointer;
-  margin-left: 20px;
-  &:nth-child(1) {
-    margin: 0;
-  }
 `;
 
 export const Image = styled.img`
