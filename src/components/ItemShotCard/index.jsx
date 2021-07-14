@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Card, Image } from "./styles";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import FavButton from "../FavButton/index.jsx";
-import ToggleLikeMutation from "../../container/ToggleLikeMutation.jsx";
+import useToggleLikeMutation from "../../hooks/useToggleLikeMutation.js";
 import { Link } from "react-router-dom";
 
 export default function ShotCard({
@@ -15,7 +15,7 @@ export default function ShotCard({
   const [show, setShow] = useState(false);
   const key = `like-${id}`;
   const [like, setLike] = useLocalStorage(key, false);
-  const { mutation, mutationError, mutationLoading } = ToggleLikeMutation();
+  const { mutation, mutationError, mutationLoading } = useToggleLikeMutation();
   const categories = {
     1: "Cats",
     2: "Dogs",
