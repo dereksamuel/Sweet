@@ -1,36 +1,38 @@
 import React from "react";
 import { MdFavorite, MdHome, MdPerson } from "react-icons/md";
 import Logo from "../Logo/index.jsx";
-import { Link, Nav } from "./styles.js";
+import { ButtonLink, Nav as NavBarContainer } from "./styles.js";
+import { useLocation } from "react-router-dom";
 
 export default function NavBar() {
+  let location = useLocation();
   return (
-    <Nav>
-      <div className="links">
-        <Link
-          to={"/profile"}
+    <NavBarContainer>
+      <ul className="links">
+        <ButtonLink
+          to="/profile"
+          replace
+          active={String(location.pathname === "/profile")}
           className="Button1"
-          active={location.pathname === "/profile"}
         >
           <MdPerson />
-        </Link>
-        <Link
+        </ButtonLink>
+        <ButtonLink
           to="/"
+          active={String(location.pathname === "/")}
           className="Button2"
-          active={location.pathname === "/"}
         >
           <MdHome />
-        </Link>
+        </ButtonLink>
         <div><Logo></Logo></div>
-        <Link
+        <ButtonLink
           to="/favorites"
+          active={String(location.pathname === "/favorites")}
           className="Button3"
-          active={location.pathname === "/favorites"}
         >
           <MdFavorite />
-        </Link>
-      </div>
-    </Nav>
+        </ButtonLink>
+      </ul>
+    </NavBarContainer>
   );
-  //FIXME: ARRÉGLA EL ENRUTADO FIX THIS
 }

@@ -1,6 +1,8 @@
+/* eslint-disable no-extra-boolean-cast */
 /* eslint-disable max-len */
 import styled from "styled-components";
-import { Link as LinkRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { fadeIn } from "../../styles/animation";
 
 export const Nav = styled.nav`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 196, 196, 0.88) 46.35%, #EB8C8C 100%);
@@ -14,7 +16,7 @@ export const Nav = styled.nav`
   .links {
     position: relative;
     min-height: 178px;
-    button, div {
+    button, a, div {
       position: absolute;
     }
     .Button1 {
@@ -41,20 +43,22 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Link = styled(LinkRouter)`
+export const ButtonLink = styled(Link)`
   border: none;
   outline: none;
   border-radius: 50%;
   padding: 1rem;
   font-size: ${({ active }) => {
-    return active ? "35px" : "30px";
+    return JSON.parse(active) ? "35px" : "30px";
   }};
   background-color: ${({ active }) => {
-    return active ? "#6764DF" : "#E4DEDE";
+    return JSON.parse(active) ? "#6764DF" : "#E4DEDE";
   }};
   color: ${({ active }) => {
-    return active ? "#FFFFFF" : "#A49DCC";
+    return JSON.parse(active) ? "#FFFFFF" : "#A49DCC";
   }};
+  transition: 0.3s all;
+  animation: ${fadeIn("1s", "ease")};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     overflow: auto;
     background: #EFDEDE;
-    padding-bottom: 11rem;
+    padding-bottom: 13rem;
   }
 
   html {

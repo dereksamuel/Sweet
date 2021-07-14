@@ -6,6 +6,7 @@ import {
   InMemoryCache
 } from "@apollo/react-hooks";
 import App from "./App.jsx";
+import { Provider } from "./Context.jsx";
 
 const client = new ApolloClient({
   uri: "https://sweet-server-vercel-r6i1a35k4-dereksamuel.vercel.app/graphql",
@@ -13,8 +14,10 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <Provider>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </Provider>,
   document.getElementById("app")
 );
