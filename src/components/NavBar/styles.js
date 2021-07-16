@@ -33,7 +33,7 @@ export const Nav = styled.nav`
     div {
       left: 50%;
       transform: translateX(-50%);
-      bottom: 0;
+      bottom: -10px;
     }
 
     .Button3 {
@@ -59,6 +59,7 @@ export const ButtonLink = styled(Link)`
   }};
   transition: 0.3s all;
   animation: ${fadeIn("1s", "ease")};
+  will-change: transform opacity;
   display: flex;
   justify-content: center;
   align-items: center;

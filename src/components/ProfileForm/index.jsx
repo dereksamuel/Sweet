@@ -1,6 +1,7 @@
 import React from "react";
 import { useInputValue } from "../../hooks/useInputValue";
-import { Form, Button, Input, ButtonChange } from "./styles";
+import { SubmitButton } from "../SubmitButton/styles.js";
+import { Form, Input, ButtonChange } from "./styles";
 
 export default function ProfileForm({
   loading,
@@ -39,9 +40,9 @@ export default function ProfileForm({
         placeholder="Password"
         required
         {...password} />
-      <Button type="submit">
+      <SubmitButton type="submit" color="#7E76AB">
         { title === "Log In" ? "Register" : "Login" }
-      </Button>
+      </SubmitButton>
     </Form>
   );
 }

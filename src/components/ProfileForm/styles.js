@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Form = styled.form`
   padding: 50px;
@@ -40,6 +40,36 @@ export const Input = styled.input`
   margin-bottom: 45px;
   &:hover {
     background-color: #F1F6f9;
+  }
+`;
+
+export const Label = styled.div`
+  background-color: #FBE4E4;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 2.5rem;
+  transition: 0.5s all;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  outline: none;
+  margin-bottom: 45px;
+  ${({ maxWidthDk }) => {
+    return maxWidthDk ? css`
+      max-width: ${maxWidthDk};
+      margin: auto;
+      display: block;
+    ` : "";
+  }}
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: 565252;
+  margin-bottom: 40px;
+  strong {
+    color: #E07777;
+    margin-right: 0.5rem;
   }
 `;
 

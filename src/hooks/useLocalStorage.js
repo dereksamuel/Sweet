@@ -10,10 +10,10 @@ function useLocalStorage (key, initValue) {
     }
   });
 
-  const setLocalStorage = (value) => {
+  const setLocalStorage = (value, liked) => {
     try {
       localStorage.setItem(key, JSON.stringify(value));
-      value && document.getElementById("audio").play();
+      !liked && document.getElementById("audio").play();
       setStorageVal(value);
     } catch (error) {
       console.error(error);

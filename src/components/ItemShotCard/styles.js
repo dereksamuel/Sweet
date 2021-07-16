@@ -45,6 +45,7 @@ export const Card = styled.figure`
     transform: scale(0.2);
     transition: 0.1s transform;
     animation: 0.8s ${scaleRotate} ease-in-out forwards;
+    will-change: transform opacity;
   }
 `;
 

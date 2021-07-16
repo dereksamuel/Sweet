@@ -5,8 +5,11 @@ import { useRegisterMutation } from "../hooks/useRegisterMutation.js";
 import Loading from "../components/Loading/index.jsx";
 import { Error } from "../components/ProfileForm/styles.js";
 import { useLoginMutation } from "../hooks/useLoginMutation.js";
+import { useHistory } from "react-router";
+import HelmetMeta from "../components/HelmetMeta/index.jsx";
 
 export default function NotRegisterUser() {
+  let history = useHistory();
   const { activateAuth } = useContext(Context);
   const [showLogin, setShowLogin] = useState(true);
   const { mutation, mutationError, mutationLoading } = useRegisterMutation();
@@ -28,13 +31,21 @@ export default function NotRegisterUser() {
           password
         },
       },
-    }).then(activateAuth);
+    }).then((res) => {
+      const { data } = res;
+      activateAuth(data.login || data.signup);
+      history.push("/");
+    });
   };
 
   if (mutationLoading || loginLoading) return <Loading></Loading>;
 
   return (
     <>
+      <HelmetMeta
+        title="register or login now!"
+        desc="This is for your heart 💔"
+      />
       {
         showLogin ? <ProfileForm
           title="Register"

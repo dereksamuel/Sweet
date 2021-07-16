@@ -22,7 +22,7 @@ function Logo(props) {
           width="300%"
           height="300%"
         >
-          <feFlood result="color1" floodColor="#eee" />
+          <feFlood result="color1" floodColor="#eddeee" />
           <feConvolveMatrix
             order="3,3"
             divisor={1}

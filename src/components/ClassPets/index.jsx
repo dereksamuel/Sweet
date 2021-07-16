@@ -3,7 +3,7 @@ import useClassesData from "../../hooks/useClassesData.js";
 import ItemClassPets from "../ItemClassPets/index.jsx";
 import { List, Item } from "./styles.js";
 
-export default function ClassPets() {
+function ClassPetsComponent() {
   const { classesList, loading } = useClassesData();
   const [showFixed, setShowFixed] = useState(false);
 
@@ -44,3 +44,7 @@ export default function ClassPets() {
     </>
   );
 }
+
+const ClassPets = React.memo(ClassPetsComponent);
+
+export default ClassPets;

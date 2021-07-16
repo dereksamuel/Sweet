@@ -8,7 +8,10 @@ export const LoadingContainer = styled.section`
     align-items: center;
     font-size: 1rem;
     font-weight: 400;
-    color: #ffaaaa;
+    color: #ff5aaa;
+  }
+  p {
+    font-size: 1.6rem;
   }
   .lds-heart {
     display: inline-block;
@@ -26,6 +29,7 @@ export const LoadingContainer = styled.section`
     height: 32px;
     background: #fff;
     animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    will-change: transform opacity;
   }
   .lds-heart div:after,
   .lds-heart div:before {

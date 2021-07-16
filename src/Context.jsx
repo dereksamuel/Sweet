@@ -3,11 +3,19 @@ import React, { createContext, useState } from "react";
 export const Context = createContext();
 
 export const Provider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
+  const key = "currentUserToken";
+  const [isAuth, setIsAuth] = useState(() => {
+    return sessionStorage.getItem(key) || undefined;
+  });
   const value = {
     isAuth,
-    activateAuth: () => {
-      setIsAuth(true);
+    activateAuth: (token) => {
+      setIsAuth(token);
+      sessionStorage.setItem(key, token);
+    },
+    removeAuth: () => {
+      setIsAuth(false);
+      sessionStorage.removeItem(key);
     },
   };
 

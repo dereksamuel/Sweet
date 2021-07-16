@@ -10,7 +10,8 @@ export const ShotoCardWithQuery = ({ id }) => {
   const { loading, error, data } = useQuery(getOneShot, {
     variables: {
       id: id
-    }
+    },
+    fetchPolicy: "cache-and-network",
   });
 
   if (error) {
