@@ -36,6 +36,17 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: new RegExp("https://(res.cloudinary.com|images.unsplash.com)"),
+          handler: "CacheFirst",
+          options: {
+            cacheName: "images",
+          },
+        },
+        {
+          urlPattern: new RegExp("https://sweet-server-vercel-r6i1a35k4-dereksamuel.vercel.app/graphql"),
+          handler: "NetworkFirst",
+          options: {
+            cacheName: "api",
+          },
         },
       ],
     }),
