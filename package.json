@@ -6,7 +6,6 @@
     "url": "git+https://github.com/dereksamuel/Sweet.git"
   },
   "scripts": {
-    "now-build": "vercel npm run build",
     "build": "webpack",
     "build:serve": "npm run build && serve dist -s",
     "start": "webpack serve --history-api-fallback",
