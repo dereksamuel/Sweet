@@ -16,5 +16,18 @@
     <h3>This app need Js to work nice</h3>
     <p>Please enable Js to see your favorite pets 🐹</p>
   </noscript>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js")
+          .then((registration) => {
+            console.log("Sw registered");
+          })
+          .catch((error) => {
+            console.error("[Error]:", error);
+          });
+      });
+    }
+  </script>
 </body>
 </html>

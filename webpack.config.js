@@ -24,6 +24,10 @@ module.exports = {
       `,
       background_color: "#EFDEDE",
       theme_color: "#4D4B5B",
+      orientation: "portrait",
+      display: "standalone",
+      start_url: "/",
+      scope: "/",
       icons: [
         {
           src: path.resolve("src/assets/logo.png"),
